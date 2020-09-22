@@ -8,7 +8,10 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
-import AssignmentIcon from '@material-ui/icons/Assignment';
+import SettingsIcon from '@material-ui/icons/Settings';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
+import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
+// import AssignmentIcon from '@material-ui/icons/Assignment';
 
 export const mainListItems = (
   <div>
@@ -20,17 +23,17 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <CalendarTodayIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Create Meeting" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon />
+        <CalendarViewDayIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Current Meetings" />
     </ListItem>
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
@@ -41,30 +44,36 @@ export const mainListItems = (
         <LayersIcon />
       </ListItemIcon>
       <ListItemText primary="Integrations" />
+    </ListItem> */}
+    <ListItem button>
+      <ListItemIcon>
+        <SettingsIcon />
+      </ListItemIcon>
+      <ListItemText primary="Settings"/>
     </ListItem>
   </div>
 );
 
 export const secondaryListItems = (
   <div>
-    <ListSubheader inset>Saved reports</ListSubheader>
+    <ListSubheader inset></ListSubheader>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        {/* <AssignmentIcon /> */}
       </ListItemIcon>
-      <ListItemText primary="Current month" />
+      <ListItemText primary="" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        {/* <AssignmentIcon /> */}
       </ListItemIcon>
-      <ListItemText primary="Last quarter" />
+      <ListItemText primary="" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        {/* <AssignmentIcon /> */}
       </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      <ListItemText primary="" />
     </ListItem>
   </div>
 );
