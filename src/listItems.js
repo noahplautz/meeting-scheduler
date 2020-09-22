@@ -14,7 +14,6 @@ import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 // import AssignmentIcon from '@material-ui/icons/Assignment';
 
 export const mainListItems = (
-
   <div>
     <ListItem button>
       <ListItemIcon>
