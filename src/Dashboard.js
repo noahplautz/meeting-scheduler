@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles, withStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
@@ -19,9 +19,82 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
-// import Chart from './Chart';
-// import Deposits from './Deposits';
-// import Orders from './Orders';
+
+import CreateMeeting from './CreateMeeting';
+import MaUTable from "@material-ui/core/Table";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import TableCell from "@material-ui/core/TableCell";
+import TableBody from "@material-ui/core/TableBody";
+import Button from '@material-ui/core/Button';
+import {TableContainer} from "@material-ui/core";
+import Table from '@material-ui/core/Table';
+import {Style} from "@material-ui/icons";
+
+function createData(name, email, updocs, schedule, action) {
+  return { name, email, updocs, schedule, action };
+}
+
+const rows = [
+  createData('John Smith', "johnsmith@gmail.com", "Resume, CV", "Create/View/Delete", "Edit/Delete"),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: '#3f51b5',
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
+
+
+function BasicTable() {
+  const classes = useStyles();
+
+  return (
+
+    <TableContainer component={Paper}>
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>Candidate Name</StyledTableCell>
+            <StyledTableCell align="right">Email</StyledTableCell>
+            <StyledTableCell align="right">Uploaded Documents</StyledTableCell>
+            <StyledTableCell align="right">Meeting Schedule</StyledTableCell>
+            <StyledTableCell align="right">Action</StyledTableCell>
+          </TableRow>
+        </TableHead>
+      <TableBody>
+        {rows.map((row) => (
+          <StyledTableRow key={row.name}>
+            <TableCell component="th" scope="row">
+              {row.name}
+            </TableCell>
+            <TableCell align="right">{row.email}</TableCell>
+            <TableCell align="right">{row.updocs}</TableCell>
+            <TableCell align="right">{row.schedule}</TableCell>
+            <TableCell align="right">{row.action}</TableCell>
+          </StyledTableRow>
+        ))}
+      </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
 
 function Copyright() {
   return (
@@ -39,6 +112,9 @@ function Copyright() {
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
+  table: {
+    minWidth: 650,
+  },
   root: {
     display: 'flex',
   },
@@ -128,6 +204,7 @@ export default function Dashboard() {
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -171,7 +248,14 @@ export default function Dashboard() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
+        <Container maxWidth="auto" className={classes.container}>
+
+          {/*<Grid container spacing={3}>*/}
+            <BasicTable />
+          <Button variant={"contained"} color="primary">Add a Position</Button>
+            {/*<TableC columns={columns} data={data} />*/}
+
+          {/*</Grid>*/}
           {/* <Grid container spacing={3}>
             Chart
             <Grid item xs={12} md={8} lg={9}>

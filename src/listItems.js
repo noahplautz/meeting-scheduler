@@ -11,8 +11,6 @@ import LayersIcon from '@material-ui/icons/Layers';
 import SettingsIcon from '@material-ui/icons/Settings';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
-// import AssignmentIcon from '@material-ui/icons/Assignment';
 
 export const mainListItems = (
   <div>
@@ -26,7 +24,9 @@ export const mainListItems = (
       <ListItemIcon>
         <CalendarTodayIcon />
       </ListItemIcon>
-      <ListItemText primary="Create Meeting" />
+      {/*<Link color="" href={CreateMeeting}>*/}
+        <ListItemText primary="Create Meeting"/>
+      {/*</Link>*/}
     </ListItem>
     <ListItem button>
       <ListItemIcon>
@@ -34,12 +34,6 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Current Meetings" />
     </ListItem>
-    <ListItem button>
-          <ListItemIcon>
-            <PersonAddIcon />
-          </ListItemIcon>
-          <ListItemText primary="Add Candidate" />
-        </ListItem>
     {/* <ListItem button>
       <ListItemIcon>
         <BarChartIcon />
