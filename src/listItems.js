@@ -11,6 +11,7 @@ import LayersIcon from '@material-ui/icons/Layers';
 import SettingsIcon from '@material-ui/icons/Settings';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 export const mainListItems = (
   <div>
@@ -52,6 +53,12 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Settings"/>
     </ListItem>
+    <ListItem button>
+          <ListItemIcon>
+            <ExitToAppIcon />
+          </ListItemIcon>
+          <ListItemText primary="Sign Out"/>
+        </ListItem>
   </div>
 );
 
