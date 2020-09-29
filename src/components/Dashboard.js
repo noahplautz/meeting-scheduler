@@ -25,6 +25,7 @@ import TableBody from "@material-ui/core/TableBody";
 import Button from '@material-ui/core/Button';
 import {TableContainer} from "@material-ui/core";
 import Table from '@material-ui/core/Table';
+import CurrentMeeting from "./CurrentMeeting";
 
 
 function createData(name, email, updocs, schedule, action) {
@@ -93,7 +94,12 @@ function BasicTable() {
         ))}
       </TableBody>
       </Table>
+      <br/>
+
+      <Button variant={"contained"} color="primary">Add a Position</Button>
+      <br/>
     </TableContainer>
+
   );
 }
 
@@ -254,9 +260,8 @@ export default function Dashboard() {
           {/*<Grid container spacing={3}>*/}
             <BasicTable />
 
-            <br/>
+          {/*<CurrentMeeting/>*/}
 
-          <Button variant={"contained"} color="primary">Add a Position</Button>
 
           <Box pt={4}>
             <Copyright />

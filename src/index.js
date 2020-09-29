@@ -9,8 +9,8 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-     <SignIn />
-    {/*{<Dashboard />}*/}
+    {/* <SignIn />*/}
+    {<Dashboard />}
   </React.StrictMode>,
   document.getElementById('root')
 );
