@@ -12,13 +12,12 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
+import { mainListItems } from './listItems';
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
@@ -34,10 +33,10 @@ function createData(name, email, updocs, schedule, action) {
 
 const rows = [
   createData('John Smith', "johnsmith@gmail.com", "Resume, CV", "Create/View/Delete", "Edit/Delete"),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Jane Doe', "jd@gmailcom", "Resume", "Create/View/Delete" , "Edit/Delete"),
+  createData('Kyle Drywall', "kylemonster@gmail.com",  "CV", "Create/View/Delete", "Edit/Delete"),
+  createData('Chad Greek', "delta_kappa@greeklife.com", "None", "Create/View/Delete", "Edit/Delete"),
+  createData('Eddie Van Halen', "vanhalen@gmail.com", "Resume, CV", "Create/View/Delete", "Edit/Delete"),
 ];
 
 const StyledTableCell = withStyles((theme) => ({
@@ -204,6 +203,7 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
 
@@ -246,7 +246,6 @@ export default function Dashboard() {
         <Divider />
         <List>{mainListItems}</List>
         <Divider />
-        <List>{secondaryListItems}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -258,29 +257,7 @@ export default function Dashboard() {
             <br/>
 
           <Button variant={"contained"} color="primary">Add a Position</Button>
-            {/*<TableC columns={columns} data={data} />*/}
 
-          {/*</Grid>*/}
-          {/* <Grid container spacing={3}>
-            Chart
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
-              </Paper>
-            </Grid>
-            Recent Deposits
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid>
-            Recent Orders
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Orders />
-              </Paper>
-            </Grid>
-          </Grid> */}
           <Box pt={4}>
             <Copyright />
           </Box>
