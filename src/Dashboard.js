@@ -19,9 +19,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
-
-import CreateMeeting from './CreateMeeting';
-import MaUTable from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
@@ -29,7 +26,7 @@ import TableBody from "@material-ui/core/TableBody";
 import Button from '@material-ui/core/Button';
 import {TableContainer} from "@material-ui/core";
 import Table from '@material-ui/core/Table';
-import {Style} from "@material-ui/icons";
+
 
 function createData(name, email, updocs, schedule, action) {
   return { name, email, updocs, schedule, action };
@@ -68,6 +65,11 @@ function BasicTable() {
   return (
 
     <TableContainer component={Paper}>
+      <text>Meeting Scheduling for Position</text>
+      <text>Name: Lecturer; ID: 2987987; Department: Phy</text>
+      <Button variant={"contained"} color="primary">Add New Candidate</Button>
+      <Button variant={"contained"} color="primary">View All Meeting Schedules</Button>
+      <p></p>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
@@ -252,6 +254,9 @@ export default function Dashboard() {
 
           {/*<Grid container spacing={3}>*/}
             <BasicTable />
+
+            <br/>
+
           <Button variant={"contained"} color="primary">Add a Position</Button>
             {/*<TableC columns={columns} data={data} />*/}
 
