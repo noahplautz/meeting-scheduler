@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-
+import { mainListItems, secondaryListItems } from './listItems';
 function App() {
   return (
     <div className="App">

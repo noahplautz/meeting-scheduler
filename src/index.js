@@ -10,7 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <SignIn /> */}
-    <Dashboard />
+    {<Dashboard />}
   </React.StrictMode>,
   document.getElementById('root')
 );
