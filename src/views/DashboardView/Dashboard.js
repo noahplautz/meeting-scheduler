@@ -17,7 +17,7 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems } from './listItems';
+// import { mainListItems } from './listItems';
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
@@ -25,9 +25,20 @@ import TableBody from "@material-ui/core/TableBody";
 import Button from '@material-ui/core/Button';
 import {TableContainer} from "@material-ui/core";
 import Table from '@material-ui/core/Table';
-import CurrentMeeting from "./CurrentMeeting";
+import CurrentMeeting from "../CurrentMeetingView/CurrentMeeting";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import ListItemText from "@material-ui/core/ListItemText";
+import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
+import CalendarViewDayIcon from "@material-ui/icons/CalendarViewDay";
+import SettingsIcon from "@material-ui/icons/Settings";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import CreateMeeting from "../CreateMeetingView/CreateMeeting";
+import {render} from "react-dom";
 
 
+const isCreate = false;
 function createData(name, email, updocs, schedule, action) {
   return { name, email, updocs, schedule, action };
 }
@@ -200,7 +211,46 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const mainListItems = (
+  <div>
+    <ListItem button>
+      <ListItemIcon>
+        <DashboardIcon />
+      </ListItemIcon>
+      <ListItemText primary="Dashboard" />
+    </ListItem>
+
+    <ListItem button href={CreateMeeting}>
+      <ListItemIcon>
+        <CalendarTodayIcon />
+      </ListItemIcon>
+      <ListItemText primary="Create Meeting"/>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+        <CalendarViewDayIcon />
+      </ListItemIcon>
+      <ListItemText primary="Current Meetings" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <SettingsIcon />
+      </ListItemIcon>
+      <ListItemText primary="Settings"/>
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <ExitToAppIcon />
+      </ListItemIcon>
+      <ListItemText primary="Sign Out"/>
+    </ListItem>
+  </div>
+);
+
+
 export default function Dashboard() {
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -211,7 +261,6 @@ export default function Dashboard() {
   };
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
 
   return (
     <div className={classes.root}>
@@ -258,9 +307,8 @@ export default function Dashboard() {
         <Container maxWidth="auto" className={classes.container}>
 
           {/*<Grid container spacing={3}>*/}
-            <BasicTable />
+          {/*<BasicTable/>*/}
 
-          {/*<CurrentMeeting/>*/}
 
 
           <Box pt={4}>

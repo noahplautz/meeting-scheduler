@@ -7,9 +7,8 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import {BrowserRouter, Router, Switch, SwitchLink} from 'react-router-dom';
-import Link from "@material-ui/core/Link";
-import CreateMeeting from "./CreateMeeting";
+import {render} from "react-dom";
+import CreateMeeting from "./views/CreateMeetingView/CreateMeeting";
 
 export const mainListItems = (
   <div>
@@ -49,6 +48,7 @@ export const mainListItems = (
 );
 
 function CreateMeetingFunc() {
+
   // return (
   //   <Link to="/CreateMeeting"></Link>
   // );
@@ -57,27 +57,3 @@ function CreateMeetingFunc() {
 
 
 }
-
-// export const secondaryListItems = (
-//   <div>
-//     <ListSubheader inset></ListSubheader>
-//     <ListItem button>
-//       <ListItemIcon>
-//         {/* <AssignmentIcon /> */}
-//       </ListItemIcon>
-//       <ListItemText primary="" />
-//     </ListItem>
-//     <ListItem button>
-//       <ListItemIcon>
-//         {/* <AssignmentIcon /> */}
-//       </ListItemIcon>
-//       <ListItemText primary="" />
-//     </ListItem>
-//     <ListItem button>
-//       <ListItemIcon>
-//         {/* <AssignmentIcon /> */}
-//       </ListItemIcon>
-//       <ListItemText primary="" />
-//     </ListItem>
-//   </div>
-// );

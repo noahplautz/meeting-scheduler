@@ -12,7 +12,15 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import CreateAccount from './CreateAccount';
+import CreateAccount from '../CreateAccountView/CreateAccount';
+import {Link as RouterLink } from 'react-router-dom';
+import {MemoryRouter} from 'react-router-dom';
+import {render} from "react-dom";
+
+ function Click() {
+//   ReactDOM.render(CreateAccount);
+//
+ }
 
 function Copyright() {
   return (
@@ -47,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const LinkBehavior = React.forwardRef((props, ref) => (
+  <RouterLink ref={ref} to="/getting-started/installation" {...props}/>
+))
 export default function SignIn() {
   const classes = useStyles();
 
@@ -103,9 +114,16 @@ export default function SignIn() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="createaccount" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
+              {/*<MemoryRouter>*/}
+              {/*  <Link component={CreateAccount} to="/" variant="body2">*/}
+              {/*    {"Don't have an account? Sign Up"}*/}
+              {/*  </Link>*/}
+              {/*</MemoryRouter>*/}
+
+                <Link to={"/"} variant="body2" onClick={Click}>
+                  {"Don't have an account? Sign Up"}
+                </Link>
+
             </Grid>
           </Grid>
         </form>
