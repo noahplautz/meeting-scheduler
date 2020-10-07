@@ -1,21 +1,34 @@
-import React from "react";
-import {Link as RouterLink} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import {AppBar, Badge, Box, Hidden, IconButton, Toolbar, makeStyles} from "@material-ui/core";
-import NotificationsIcon from '@material-ui/icons';
-import MenuIcon from '@material-ui/icons';
-import InputIcon from '@material-ui/icons';
+import {
+  AppBar,
+  Badge,
+  Box,
+  Hidden,
+  IconButton,
+  Toolbar,
+  makeStyles, Button
+} from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
+import InputIcon from '@material-ui/icons/Input';
+// import Logo from 'src/components/Logo';
+// import {common} from "@material-ui/core/colors";
 
 const useStyles = makeStyles(() => ({
   root: {},
-
+  avatar: {
+    width: 60,
+    height: 60
+  },
 }));
 
 const TopBar = ({
-  className, onMobileNavOpen,
+  className,
+  onMobileNavOpen,
   ...rest
-
 }) => {
   const classes = useStyles();
   const [notifications] = useState([]);
@@ -28,7 +41,7 @@ const TopBar = ({
     >
       <Toolbar>
         <RouterLink to="/">
-          <Logo />
+          <Button variant='contained'>Meeting Scheduler</Button>
         </RouterLink>
         <Box flexGrow={1} />
         <Hidden mdDown>

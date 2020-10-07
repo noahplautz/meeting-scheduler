@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import {
   AppBar,
   Toolbar,
-  makeStyles
+  makeStyles,
 } from '@material-ui/core';
-
+import Logo from 'src/components/Logo';
 
 const useStyles = makeStyles(({
   root: {},
