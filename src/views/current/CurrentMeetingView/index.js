@@ -5,10 +5,9 @@ import {
   Grid,
   makeStyles
 } from '@material-ui/core';
-import { Pagination } from '@material-ui/lab';
+// import { Pagination } from '@material-ui/lab';
 import Page from 'src/components/Page';
-
-
+import Calender from './Calender';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +31,7 @@ const ProductList = () => {
       title="Current Meetings"
     >
       <Container maxWidth={false}>
-
+        <Calender />
       </Container>
     </Page>
   );

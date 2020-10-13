@@ -6,7 +6,7 @@ import {
 import Page from 'src/components/Page';
 import Copyright from './Copyright';
 import MeetingTable from './MeetingTable';
-import LatestOrders from "./LatestOrders";
+// import LatestOrders from "./LatestOrders";
 
 const useStyles = makeStyles((theme) => ({
   root: {
