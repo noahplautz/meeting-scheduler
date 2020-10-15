@@ -2,15 +2,21 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import {
- Box, Button, Table, TableHead, TableRow, TableCell, TableBody, Card, CardHeader, withStyles
+  Box, Button, Table, TableHead, TableRow, TableCell, TableBody, Card, CardHeader, withStyles, Divider, Grid, Link
 } from '@material-ui/core';
 import { v4 as uuid } from 'uuid';
 import clsx from 'clsx';
+import theme from "../../../theme";
+// import { NavLink as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   root: {},
   table: {
     minWidth: 650,
+  },
+  button: {
+    margin: theme.spacing(1)
   },
 }));
 const StyledTableCell = withStyles(() => ({
@@ -30,18 +36,7 @@ const StyledTableRow = withStyles((theme) => ({
     },
   },
 }))(TableRow);
-// function createData(name, email, updocs, schedule, action) {
-//   return {
-//     name, email, updocs, schedule, action
-//   };
-// }
-// const rows = [
-//   createData('John Smith', 'johnsmith@gmail.com', 'Resume, CV', 'Create/View/Delete', 'Edit/Delete'),
-//   createData('Jane Doe', 'jd@gmailcom', 'Resume', 'Create/View/Delete', 'Edit/Delete'),
-//   createData('Kyle Drywall', 'kylemonster@gmail.com', 'CV', 'Create/View/Delete', 'Edit/Delete'),
-//   createData('Chad Greek', 'delta_kappa@greeklife.com', 'None', 'Create/View/Delete', 'Edit/Delete'),
-//   createData('Eddie Van Halen', 'vanhalen@gmail.com', 'Resume, CV', 'Create/View/Delete', 'Edit/Delete'),
-// ];
+
 
 const data = [
   {
@@ -93,11 +88,26 @@ const MeetingTable = ({ className, ...rest }) => {
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title='Meetings' />
+      <CardHeader title='Meetings' className={classes.header}/>
 
+        <Grid
+          container
+          direction={"row"}
+          justify={"flex-end"}
+          alignItems={"flex-start"}
+          >
+          <Button color={"primary"}  className={classes.button} variant={"contained"}>Add Candidate</Button>
+          <RouterLink to='/app/create'>
+            <Button color={"primary"} className={classes.button} variant={"contained"}>Create Meeting</Button>
+          </RouterLink>
+        </Grid>
+
+
+      <Divider/>
         <Box minWidth={800}>
           <Table>
             <TableHead>
+
               <TableRow>
                 <TableCell>Candidate Name</TableCell>
                 <TableCell>Email</TableCell>

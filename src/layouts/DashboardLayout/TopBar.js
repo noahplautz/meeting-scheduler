@@ -41,7 +41,7 @@ const TopBar = ({
     >
       <Toolbar>
         <RouterLink to="/">
-          <Button variant='contained'>Meeting Scheduler</Button>
+          <Button color={"secondary"} variant='contained'>Meeting Scheduler</Button>
         </RouterLink>
         <Box flexGrow={1} />
         <Hidden mdDown>

@@ -5,6 +5,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
+import CreateForm from "./CreateForm";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,11 +25,11 @@ const CustomerListView = () => {
       className={classes.root}
       title="Create Meetings"
     >
-      <Container maxWidth={false}>
+      <Container maxWidth={"lg"}>
         {/*<Toolbar />*/}
-        <Box mt={3}>
-          {/*<Results customers={customers} />*/}
-        </Box>
+        {/*<Box mt={3}>*/}
+          <CreateForm/>
+        {/*</Box>*/}
       </Container>
     </Page>
   );
