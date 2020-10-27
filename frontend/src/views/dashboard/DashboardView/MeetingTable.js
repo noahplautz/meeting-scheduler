@@ -7,8 +7,10 @@ import {
 import { v4 as uuid } from 'uuid';
 import clsx from 'clsx';
 import theme from "../../../theme";
-// import { NavLink as RouterLink } from 'react-router-dom';
 import { Link as RouterLink } from 'react-router-dom';
+import { TextField } from '@material-ui/core';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -83,6 +85,11 @@ const data = [
 const MeetingTable = ({ className, ...rest }) => {
   const classes = useStyles();
   const [people] = useState(data);
+
+  function addCandidate() {
+
+  }
+
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -96,7 +103,7 @@ const MeetingTable = ({ className, ...rest }) => {
           justify={"flex-end"}
           alignItems={"flex-start"}
           >
-          <Button color={"primary"}  className={classes.button} variant={"contained"}>Add Candidate</Button>
+          <Button color={"primary"}  className={classes.button} variant={"contained"} onClick={addCandidate()}>Add Candidate</Button>
           <RouterLink to='/app/create'>
             <Button color={"primary"} className={classes.button} variant={"contained"}>Create Meeting</Button>
           </RouterLink>
@@ -130,6 +137,11 @@ const MeetingTable = ({ className, ...rest }) => {
                 </TableRow>
 
               ))}
+              <TableRow>
+                <TableCell><TextField id={'standard-basic'} defaultValue={'Name'}></TextField></TableCell>
+                <TableCell><TextField id={'standard-basic'} defaultValue={'Email'}></TextField></TableCell>
+                <TableCell><Button variant={'contained'} startIcon={<CloudUploadIcon />}>Upload</Button></TableCell>
+              </TableRow>
             </TableBody>
           </Table>
         </Box>

@@ -27,7 +27,6 @@ const Dashboard = () => {
     >
       <Container maxWidth={false}>
         <MeetingTable />
-        {/*<LatestOrders />*/}
         <br />
         <Copyright />
       </Container>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
-  Box,
+  Box, Button,
   Container,
   Grid,
   makeStyles
@@ -8,6 +8,7 @@ import {
 // import { Pagination } from '@material-ui/lab';
 import Page from 'src/components/Page';
 import Calender from './Calender';
+import ReactToPrint, { useReactToPrint } from 'react-to-print';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,10 +21,15 @@ const useStyles = makeStyles((theme) => ({
     height: '100%'
   }
 }));
+const Example = () => {
+  const componentRef = useRef();
+};
+
 
 const ProductList = () => {
   const classes = useStyles();
   // const [products] = useState(data);
+  const componentRef = Example();
 
   return (
     <Page
@@ -31,6 +37,9 @@ const ProductList = () => {
       title="Current Meetings"
     >
       <Container maxWidth={false}>
+        <ReactToPrint
+          trigger={() => <Button variant={'contained'}>Print</Button>}
+          content={() => componentRef.current}/>
         <Calender />
       </Container>
     </Page>
